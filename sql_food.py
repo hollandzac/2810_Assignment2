@@ -25,7 +25,9 @@ WHERE violations.serial_number=inspections.serial_number GROUP BY facility_name"
 
 cursor.execute(query)
 
-query = """SELECT COUNT(violations.serial_number), facility_name FROM inspections, violations WHERE violations.serial_number=inspections.serial_number 
+query = """SELECT COUNT(violations.serial_number), facility_name
+FROM inspections, violations
+WHERE violations.serial_number=inspections.serial_number
 GROUP BY facility_name ORDER BY COUNT(violations.serial_number) DESC"""
 
 cursor.execute(query)
